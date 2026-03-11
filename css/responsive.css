@@ -1,0 +1,121 @@
+/* ==========================================================================
+   RESPONSIVE — Media Queries
+   All breakpoint-specific overrides live here.
+   ========================================================================== */
+
+/* ==========================================================================
+   TABLET & BELOW (≤ 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+  /* ---- Navigation ---- */
+  .nav-links,
+  .nav-right .theme-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* ---- Bio Section ---- */
+  .bio-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .bio-image-wrap {
+    aspect-ratio: 4 / 3;
+    max-height: 360px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE (≤ 640px)
+   ========================================================================== */
+@media (max-width: 640px) {
+
+  /* ---- Work Grid ---- */
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.featured {
+    aspect-ratio: 16 / 10;
+  }
+
+  /* Always show project info on mobile (no hover) */
+  .project-info {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .play-overlay {
+    opacity: 1;
+  }
+
+  .play-circle {
+    transform: scale(1);
+    width: 48px;
+    height: 48px;
+  }
+
+  .play-circle::after {
+    border-width: 6px 0 6px 10px;
+  }
+}
+
+/* ==========================================================================
+   NO HOVER DEVICES (touch screens)
+   ========================================================================== */
+@media (hover: none) {
+
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  .project-info {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .play-overlay {
+    opacity: 1;
+  }
+
+  .play-circle {
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   REDUCED MOTION — Accessibility
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hero-role,
+  .hero-logo,
+  .hero-sub,
+  .hero-cta,
+  .scroll-cue {
+    opacity: 1;
+    transform: none;
+  }
+}
