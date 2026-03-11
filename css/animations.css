@@ -1,0 +1,60 @@
+/* ==========================================================================
+   ANIMATIONS — Keyframes & Scroll Reveal
+   ========================================================================== */
+
+/* ==========================================================================
+   KEYFRAMES
+   ========================================================================== */
+
+/* Fade up — used for hero elements on page load */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo reveal — scale + fade for hero logo */
+@keyframes logoReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Ambient drift — floating glow orbs */
+@keyframes drift {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(30px, -25px); }
+}
+
+/* Scroll indicator pulse */
+@keyframes scrollPulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); }
+  50%      { opacity: 0.25; transform: scaleY(0.5); }
+}
+
+/* ==========================================================================
+   SCROLL REVEAL — Intersection Observer driven
+   Add `.reveal` to any element. Add `.d1` – `.d6` for stagger.
+   JS adds `.vis` when element enters viewport.
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.8s var(--ease-expo),
+              transform 0.8s var(--ease-expo);
+}
+
+.reveal.vis {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- Stagger Delays ---- */
+.reveal.d1 { transition-delay: 0.08s; }
+.reveal.d2 { transition-delay: 0.16s; }
+.reveal.d3 { transition-delay: 0.24s; }
+.reveal.d4 { transition-delay: 0.32s; }
+.reveal.d5 { transition-delay: 0.40s; }
+.reveal.d6 { transition-delay: 0.48s; }
